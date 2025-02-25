@@ -10,7 +10,6 @@ import {
 
 export default async () => {
   await closeMainWindow();
-  await showLoadingHUD("Copying...");
   const frontmostApp = await getFrontmostApplication();
   if (frontmostApp.bundleId === finderBundleId) {
     // get finder path
