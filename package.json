@@ -6,7 +6,8 @@
   "icon": "copy-path.png",
   "author": "koinzhang",
   "contributors": [
-    "ridemountainpig"
+    "ridemountainpig",
+    "emilyg"
   ],
   "categories": [
     "Developer Tools",
@@ -43,6 +44,14 @@
       "required": false,
       "label": "Show Last Copy",
       "description": "Show the path or URL of the most recent copy in the subtitle of the command.",
+      "default": true
+    },
+    {
+      "name": "cleanUrl",
+      "type": "checkbox",
+      "required": false,
+      "label": "Clean url",
+      "description": "Strip out some tracking parameters",
       "default": true
     },
     {
@@ -151,7 +160,8 @@
   "dependencies": {
     "@raycast/api": "^1.84.6",
     "@raycast/utils": "^1.18.0",
-    "parse-url": "^9.2.0"
+    "parse-url": "^9.2.0",
+    "tidy-url": "^1.18.3"
   },
   "devDependencies": {
     "@raycast/eslint-config": "^1.0.11",

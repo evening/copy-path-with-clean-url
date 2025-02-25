@@ -1,5 +1,10 @@
 # Copy Path Changelog
 
+## [Remove tracking parameters] - 2025-02-26
+
+- Add Preference _clean url_: Removes unnecessary tracking parameters
+
+
 ## [Add Preference: Use tilde for home directory] - 2024-11-26
 
 - Add Preference _Use tilde for home directory_: Use a tilde for the home directory in the copied path.

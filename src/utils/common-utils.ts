@@ -22,6 +22,7 @@ import {
 import {
   copyUrlContent,
   copyWhenUnSupported,
+  cleanUrl,
   multiPathSeparator,
   showCopyTip,
   showLastCopy,
@@ -30,6 +31,7 @@ import {
 import parseUrl from "parse-url";
 import * as os from "node:os";
 import { firefoxBrowsers } from "./constants";
+import { TidyURL } from 'tidy-url';
 
 export const isEmpty = (string: string | null | undefined) => {
   return !(string != null && String(string).length > 0);
@@ -136,6 +138,10 @@ export const copyBrowserTabUrl = async (frontmostApp: Application) => {
       url = await copySafariWebAppPath(frontmostApp.name);
     }
     shouldCopy = false;
+  }
+
+  if (cleanUrl) {
+    url = TidyURL.clean(url).url;
   }
 
   if (isEmpty(url)) {
